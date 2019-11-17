@@ -1,0 +1,23 @@
+<html>
+        <head>
+            {% if title %}
+            <title> {{title}} Microblog </title>
+            {% else %}
+            <title>This is the Default Title</title>
+            {% endif %}
+        </head>
+        <body>
+            {% if user %}
+            <h1>Hello, {{user.username}}!</h1>
+            {% else %}
+            <h1> Hello Sir/Madam </h1>
+            {% endif %}
+            {% for post in posts %}
+            <div>
+                <p>{{post.author.username}} says:
+                    <b>{{post.body}}</b>
+                </p>
+            {% endfor %}
+            </div>
+        </body>
+    </html>
