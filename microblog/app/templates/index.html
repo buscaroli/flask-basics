@@ -1,23 +1,14 @@
-<html>
-        <head>
-            {% if title %}
-            <title> {{title}} Microblog </title>
-            {% else %}
-            <title>This is the Default Title</title>
-            {% endif %}
-        </head>
-        <body>
-            {% if user %}
-            <h1>Hello, {{user.username}}!</h1>
-            {% else %}
-            <h1> Hello Sir/Madam </h1>
-            {% endif %}
-            {% for post in posts %}
-            <div>
-                <p>{{post.author.username}} says:
-                    <b>{{post.body}}</b>
-                </p>
-            {% endfor %}
-            </div>
-        </body>
-    </html>
+{%extends "base.html" %}
+<!--The extends statement establishes the inheritance link
+between the two templates: base.html and index.html,
+the block statement with name content within index.html 
+will be inserted inside base.html thanks to Jinja2-->
+
+{% block content %}
+    <h1> Hi, {{user.username}}!</h1>
+    {% for post in posts %}
+    <div>
+        <p>{{post.author.username}} says: <b>{{post.body}}</b></p>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+<html>
+        <head>
+            {% if title %}
+            <title> {{title}} Microblog </title>
+            {% else %}
+            <title>This is the Default Title</title>
+            {% endif %}
+        </head>
+        <body>
+            <div>
+                Microblog: <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+            <hr>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% block content %} 
+                <!--derived template can go here-->
+                <!--content is the same name as in index.html-->
+            {% endblock %}
+        </body>
+    </html>
