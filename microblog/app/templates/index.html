@@ -1,11 +1,11 @@
-{%extends "base.html" %}
+{% extends "base.html" %}
 <!--The extends statement establishes the inheritance link
 between the two templates: base.html and index.html,
 the block statement with name content within index.html 
 will be inserted inside base.html thanks to Jinja2-->
 
 {% block content %}
-    <h1> Hi, {{user.username}}!</h1>
+    <h1> Hi, {{current_user.username}}!</h1>
     {% for post in posts %}
     <div>
         <p>{{post.author.username}} says: <b>{{post.body}}</b></p>

@@ -1,0 +1,7 @@
+{% comment %} 
+    EXPORTS TO DO:
+    export FLASK_APP=microblog.py   // for the application.
+    export DATABASE_URL=<whatever>  // for the database, explained in Chap 4
+                                    // using built-in sqlite at this point
+                                    // so can skip export until later.
+{% endcomment %}
